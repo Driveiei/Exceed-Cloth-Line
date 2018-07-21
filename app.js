@@ -19,3 +19,5 @@ window.onload = function() {
     chart.render();
     
     }
+
+        $('#element').css('background-color','transparent');
