@@ -118,6 +118,51 @@ let swapSwitch = ()=>{
     })
 }
 
+window.onload = function () {
+
+    var dps = []; // dataPoints
+    var chart = new CanvasJS.Chart("chartTemperature", {
+        title: {
+            text: "Temperature"
+        },
+        axisY: {
+            includeZero: false
+        },
+        data: [{
+            type: "line",
+            dataPoints: dps
+        }]
+    });
+
+    var xVal = 0;
+    var yVal = 0;
+    var updateInterval = 3000;
+    var dataLength = 10; // number of dataPoints visible at any point
+
+    var updateChart = function (count) {
+
+        count = count || 1;
+
+        for (var j = 0; j < count; j++) {
+            yVal = parseInt(temp);
+            dps.push({
+                x: xVal,
+                y: yVal
+            });
+            xVal++;
+        }
+
+        if (dps.length > dataLength) {
+            dps.shift();
+        }
+
+        chart.render();
+    };
+
+    updateChart(dataLength);
+    setInterval(function () { updateChart() }, updateInterval);
+}
+
 let init = () => {
     getSetup()
     postSetup()
