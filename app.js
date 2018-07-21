@@ -60,11 +60,11 @@ let getAll = () => {
     })
     test = getWeb("start").then((response) => {
         start = response
-        $('#result-start').html(`<h4>${start}</h4>`)
+        $('#result-start').html(`<div style="font-size: 100px;color: black;font-weight: 600" class="centered">${start}</div>`)
     })
     test = getWeb("finish").then((response) => {
         finish = response
-        $('#result-finish').html(`<h4>${finish}</h4>`)
+        $('#result-finish').html(`<div style="font-size: 100px;color: black;font-weight: 600" class="centered">${finish}</div>`)
     })
 }
 
