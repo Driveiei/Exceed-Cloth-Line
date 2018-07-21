@@ -18,28 +18,28 @@ let getWeb = (sensor) => {
 
 let getAll = () => {
     test = getWeb("rain_status").then((response) => {
-        rain =parseInt(response)
+        rain = parseInt(response)
         if (rain === 0) {
-            $('#result-rain-image').html('<img width="78" src="./source/Rainy.svg" alt="">')
+            $('#result-rain-image').html('<img width="76" src="./source/Rainy.svg" alt="">')
             $('#result-rain').html(`<div class="miniText"><br><h3>Rainy</h3></div>`)
         }
         else {
-            $('#result-rain-image').html('<img width="78" src="./source/Cloudy.svg" alt="">')
+            $('#result-rain-image').html('<img width="76" src="./source/Cloudy.svg" alt="">')
             $('#result-rain').html(`<div class="miniText"><br><h3>Sunny</h3></div>`)
         }
     })
 
     test = getWeb("light_status").then((response) => {
         light = response
-        if(light <=450){
-            $('#result-light-image').html('<img width="78" src="./source/DayNight.svg" alt="">')
+        if(light <=200){
+            $('#result-light-image').html('<img width="76" src="./source/DayNight.svg" alt="">')
             $('#result-light').html(`<div class="miniText">
             <br>
             <h3>Goodnight</h3>
         </div>`)
         }
         else{
-            $('#result-light-image').html('<img width="78" src="./source/Daylight.svg" alt="">')
+            $('#result-light-image').html('<img width="76" src="./source/Daylight.svg" alt="">')
             $('#result-light').html(`<div class="miniText">
             <br>
             <h3>Morning</h3>
@@ -106,12 +106,12 @@ let swapSwitch = ()=>{
     $('#swap').on('click',() =>{
         x = !x;
         if(x === true){
-            $('#show').html(`<div class="col-6" style="padding-top: 8px">
+            $('#show').html(`<div class="col-6" style="padding-top: 6px">
             <button id="auto-drop-button" type="button" class="btn btn-danger btn-lg">Danger</button>
         </div>`)
         }
         else{
-            $('#show').html(`<div class="col-6" style="padding-top: 8px">
+            $('#show').html(`<div class="col-6" style="padding-top: 6px">
             <button id="auto-drop-button" type="button" class="btn btn-danger btn-lg disabled">Danger</button>
         </div>`)
         }
@@ -136,7 +136,7 @@ window.onload = function () {
 
     var xVal = 0;
     var yVal = 0;
-    var updateInterval = 3000;
+    var updateInterval = 2000;
     var dataLength = 10; // number of dataPoints visible at any point
 
     var updateChart = function (count) {
@@ -161,7 +161,51 @@ window.onload = function () {
 
     updateChart(dataLength);
     setInterval(function () { updateChart() }, updateInterval);
+
+    var dpsTwo = []; // dataPoints
+    var chartTwo = new CanvasJS.Chart("chartMoisture", {
+        title: {
+            text: "Moisture"
+        },
+        axisY: {
+            includeZero: false
+        },
+        data: [{
+            type: "line",
+            dataPoints: dpsTwo
+        }]
+    });
+
+    var xValTwo = 0;
+    var yValTwo = 0;
+    var updateIntervalTwo = 2000;
+    var dataLengthTwo = 20; // number of dataPoints visible at any point
+
+    var updateChartTwo = function (countThree) {
+
+        countThree = countThree || 1;
+
+        for (var j = 0; j < countThree; j++) {
+            yValTwo = humid;
+            dpsTwo.push({
+                x: xValTwo,
+                y: yValTwo
+            });
+            xValTwo++;
+        }
+
+        if (dpsTwo.length > dataLength) {
+            dpsTwo.shift();
+        }
+
+        chartTwo.render();
+    };
+
+    updateChartTwo(dataLengthTwo);
+    setInterval(function () { updateChartTwo() }, updateIntervalTwo);
 }
+
+
 
 let init = () => {
     getSetup()

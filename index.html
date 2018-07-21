@@ -15,165 +15,191 @@
 </head>
 
 <body>
-    <div class="container-fluid center">
-        <div class="row">
-            <div class="col-12 col-md-8">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Temperature</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Moisture</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="container-fluid center">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="topic">
-                            <strong>
+                    <div class="col-12 col-md-8">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="topic">
+                                    <strong>
+                                        <br>
+                                        <h2>Number of clothes</h2>
+                                    </strong>
+                                </div>
                                 <br>
-                                <h2>Number of clothes</h2>
-                            </strong>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div style="padding-left: 80px">
+                                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                                    <img class="card-img-top" src="./source/Shirt-humid.svg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h2 class="card-title">Wet 0</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div style="padding-left: 80px">
+                                                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                                                    <img class="card-img-top" src="./source/Shirt-dry.svg" alt="Card image cap">
+                                                    <div class="card-body">
+                                                        <h2 class="card-title">Dry 0</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <br>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div style="padding-left: 80px">
-                                        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                                            <img class="card-img-top" src="./source/Shirt-humid.svg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h2 class="card-title">Wet 0</h2>
-                                            </div>
-                                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="row">
+                            <div class="col-12 topic">
+                                <strong>
+                                    <h3 style="padding-top: 10px">Weather</h3>
+                                </strong>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                            </div>
+                            <div class="col-4">
+                                <div id="result-temp">
+                                    <div class="miniText">
+                                        <br>
+                                        <h3>0°C</h3>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div style="padding-left: 80px">
-                                        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-                                            <img class="card-img-top" src="./source/Shirt-dry.svg" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h2 class="card-title">Dry 0</h2>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="col-4">
+                                <div id="">
+                                    <img width="76" src="./source/Temperature.svg" alt="">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <br>
-                <div id="chartTemperature" style="height: 200px; width: 600px;"></div>
-            </div>
 
-            <div class="col-12 col-md-4">
-                <div class="row">
-                    <div class="col-12 topic">
-                        <strong>
-                            <br>
-                            <h2>Weather</h2>
-                        </strong>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-4">
-                    </div>
-                    <div class="col-4">
-                        <div id="result-temp">
-                            <div class="miniText">
-                                <br>
-                                <h3>0°C</h3>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+
+                            </div>
+                            <div class="col-4">
+                                <div id="result-humid">
+                                    <div class="miniText">
+                                        <br>
+                                        <h3>0%</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div id="">
+                                    <img width="76" src="./source/Humid.svg" alt="">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div id="">
-                            <img width="78" src="./source/Temperature.svg" alt="">
-                        </div>
-                    </div>
-                </div>
+                        <hr>
 
-                <hr>
-                <div class="row">
-                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-4">
 
-                    </div>
-                    <div class="col-4">
-                        <div id="result-humid">
-                            <div class="miniText">
-                                <br>
-                                <h3>0%</h3>
+                            </div>
+                            <div class="col-4">
+                                <div id="result-rain">
+                                    <div class="miniText">
+                                        <br>
+                                        <h3>Sunny</h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-4">
+                                <div id="result-rain-image">
+                                    <img width="76" src="./source/Cloudy.svg" alt="">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div id="">
-                            <img width="78" src="./source/Humid.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <hr>
+                        <hr>
 
-                <div class="row">
-                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-4">
 
-                    </div>
-                    <div class="col-4">
-                        <div id="result-rain">
-                            <div class="miniText">
-                                <br>
-                                <h3>Sunny</h3>
+                            </div>
+                            <div class="col-4">
+                                <div id="result-light">
+                                    <div class="miniText">
+                                        <br>
+                                        <h3>Morning</h3>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-4">
+                                <div id="result-light-image">
+                                    <img width="76" src="./source/DayLight.svg" alt="">
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="col-4">
-                        <div id="result-rain-image">
-                            <img width="78" src="./source/Cloudy.svg" alt="">
+                        <hr>
+                        <div class="topic">
+                            <strong>
+                                <h3>Weather</h3>
+                            </strong>
                         </div>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="row">
-                    <div class="col-4">
-
-                    </div>
-                    <div class="col-4">
-                        <div id="result-light">
-                            <div class="miniText">
-                                <br>
-                                <h3>Morning</h3>
+                        <div class="row" style="padding-top: 6px">
+                            <div class="col-6">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span id="swap" class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <button id="on-round-button" type="button" class="btn btn-info btn-lg">Round</button>
                             </div>
                         </div>
 
-
-                    </div>
-                    <div class="col-4">
-                        <div id="result-light-image">
-                            <img width="78" src="./source/DayLight.svg" alt="">
+                        <div id="show">
+                            <div class="col-6" style="padding-top: 6px">
+                                <button id="auto-drop-button" type="button" class="btn btn-danger btn-lg disabled center">Drop</button>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="topic">
-                    <strong>
-                        <h2>Weather</h2>
-                    </strong>
-                </div>
-                <div class="row" style="padding-top: 10px">
-                    <div class="col-6">
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span id="swap" class="slider round"></span>
-                        </label>
-                    </div>
-                    <div class="col-6">
-                        <button id="on-round-button" type="button" class="btn btn-info btn-lg">Round</button>
-                    </div>
-                </div>
-
-                <div id="show">
-                    <div class="col-6" style="padding-top: 8px">
-                        <button id="auto-drop-button" type="button" class="btn btn-danger btn-lg disabled center">Danger</button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <br>
+            <br>
+            <div class="container center">
+                <div id="chartTemperature" style="height: 500px; width: 1100px;"></div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <br>
+            <br>
+            <div class="container center">
+                <div id="chartMoisture" style="height: 500px; width: 1100px;"></div>
+            </div>
+        </div>
     </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
