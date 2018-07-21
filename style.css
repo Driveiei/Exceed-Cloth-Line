@@ -1,10 +1,3 @@
-.box{
-    width: 200px;
-    height: 40px;
-    margin: auto;
-    border: 2px solid #FED57B;
-    background: #FED57B;
-}
 .center{
     text-align: center;
 }
@@ -19,4 +12,75 @@ body {
 .miniText{
     font-style: oblique;
     text-align: right;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+.centered-left{
+    position: absolute;
+    top: 90px;
+    left: 230px;
+}
+
+.centered-right{
+    position: absolute;
+    bottom: 90px;
+    right: 230px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.absoluted{
+    font-size: 84px;
+}
+.details{
+    font-style: oblique;
+    text-align: left;
+    font-size: 32px;
+}
+.green-box{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    border : 3px solid #96FF72;
+    background-color: #96FF72;
+}
+.red-box{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    border : 3px solid #FF6D6C;
+    background-color: #FF6D6C;
 }
