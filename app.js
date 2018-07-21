@@ -31,14 +31,14 @@ let getAll = () => {
 
     test = getWeb("light_status").then((response) => {
         light = response
-        if(light <=200){
+        if (light <= 200) {
             $('#result-light-image').html('<img width="76" src="./source/DayNight.svg" alt="">')
             $('#result-light').html(`<div class="miniText">
             <br>
             <h3>Goodnight</h3>
         </div>`)
         }
-        else{
+        else {
             $('#result-light-image').html('<img width="76" src="./source/Daylight.svg" alt="">')
             $('#result-light').html(`<div class="miniText">
             <br>
@@ -90,8 +90,8 @@ let postWeb = (sensor, data) => {
 let postSetup = () => {
     $('#auto-drop-button').on('click', () => {
         console.log(x)
-        if(x){
-        postWeb('drop_status', 2)
+        if (x) {
+            postWeb('drop_status', 1)
         }
     })
     $('#on-round-button').on('mousedown', () => {
@@ -102,18 +102,15 @@ let postSetup = () => {
     })
 }
 
-let swapSwitch = ()=>{
-    $('#swap').on('click',() =>{
+let swapSwitch = () => {
+    $('#swap').on('click', () => {
         x = !x;
-        if(x === true){
-            $('#show').html(`<div class="col-6" style="padding-top: 6px">
-            <button id="auto-drop-button" type="button" class="btn btn-danger btn-lg">Danger</button>
-        </div>`)
+        if (x === true) {
+            $('#auto-drop-button').removeClass(`disabled`)
         }
-        else{
-            $('#show').html(`<div class="col-6" style="padding-top: 6px">
-            <button id="auto-drop-button" type="button" class="btn btn-danger btn-lg disabled">Danger</button>
-        </div>`)
+        else {
+            $('#auto-drop-button').addClass(`disabled`)
+            postWeb('drop_status',0)
         }
     })
 }

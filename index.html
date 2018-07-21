@@ -43,23 +43,19 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-6">
-                                            <div style="padding-left: 80px">
-                                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                                                    <img class="card-img-top" src="./source/Shirt-humid.svg" alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <h2 class="card-title">Wet 0</h2>
-                                                    </div>
-                                                </div>
+                                            <div style="padding-left: 80px; width: 400px;">
+                                                <img class="card-img-top" src="./source/Shirt-humid.svg" alt="Card image cap">
+                                            </div>
+                                            <div class="alert alert-dark" role="alert">
+                                                <h3>Wet Clothes xxx Pieces</h3>
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div style="padding-left: 80px">
-                                                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-                                                    <img class="card-img-top" src="./source/Shirt-dry.svg" alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <h2 class="card-title">Dry 0</h2>
-                                                    </div>
-                                                </div>
+                                            <div style="padding-left: 80px; width: 400px;">
+                                                <img class="card-img-top" src="./source/Shirt-dry.svg" alt="Card image cap">
+                                            </div>
+                                            <div class="alert alert-dark" role="alert">
+                                                <h3>Dry Clothes xxx Pieces</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -166,20 +162,28 @@
                         </div>
                         <div class="row" style="padding-top: 6px">
                             <div class="col-6">
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span id="swap" class="slider round"></span>
-                                </label>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="miniText">
+                                            <h3 style="text-align: right">Auto</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span id="swap" class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-6">
                                 <button id="on-round-button" type="button" class="btn btn-info btn-lg">Round</button>
                             </div>
                         </div>
 
-                        <div id="show">
-                            <div class="col-6" style="padding-top: 6px">
-                                <button id="auto-drop-button" type="button" class="btn btn-danger btn-lg disabled center">Drop</button>
-                            </div>
+                        <div class="col-6" style="padding-top: 6px">
+                            <button id="auto-drop-button" type="button" class="btn btn-danger btn-lg disabled center">Drop</button>
                         </div>
                     </div>
                 </div>
