@@ -56,7 +56,7 @@ let getAll = () => {
     })
     test = getWeb("humid").then((response) => {
         humid = parseFloat(response)
-        $('#result-humid').html(`<div class="miniText"><br><h3>${humid}</h3></div>`)
+        $('#result-humid').html(`<div class="miniText"><br><h3>${humid}%</h3></div>`)
     })
     test = getWeb("start").then((response) => {
         start = response
