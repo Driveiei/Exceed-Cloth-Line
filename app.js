@@ -107,9 +107,11 @@ let swapSwitch = () => {
         x = !x;
         if (x === true) {
             $('#auto-drop-button').removeClass(`disabled`)
+            $('#manual-auto').html(`<h3 style="text-align: right">Manual</h3>`)
         }
         else {
             $('#auto-drop-button').addClass(`disabled`)
+            $('#manual-auto').html(`<h3 style="text-align: right">Auto</h3>`)
             postWeb('drop_status',0)
         }
     })
