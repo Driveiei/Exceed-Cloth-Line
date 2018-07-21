@@ -20,30 +20,6 @@ body {
     color: white;
 }
 
-.bottom-left {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-}
-
-.top-left {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-}
-
-.top-right {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-}
-
-.bottom-right {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-}
-
 .centered-left{
     position: absolute;
     top: 90px;
@@ -92,7 +68,9 @@ body {
     height: 34px;
   }
   
-  .switch input {display:none;}
+  .switch input {
+      display:none;
+    }
   
   .slider {
     position: absolute;
@@ -139,12 +117,4 @@ body {
   
   .slider.round:before {
     border-radius: 50%;
-  }
-  .box{
-    width: 600px;
-    height: 450px;
-    margin: auto;
-    border : 8px solid rgba(136, 136, 136, 0.733);
-    background-color: rgb(249, 255, 214)
-    
   }
