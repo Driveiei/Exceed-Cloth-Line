@@ -40,19 +40,14 @@ let getAll = () => {
         }
         else {
             $('#result-light-image').html('<img width="76" src="./source/Daylight.svg" alt="">')
-            $('#result-light').html(`<div class="miniText">
-            <br>
-            <h3>Morning</h3>
+            $('#result-light').html(`<div class="miniText"><br><h3>Morning</h3>
         </div>`)
         }
     })
 
     test = getWeb("temp").then((response) => {
         temp = response
-        $('#result-temp').html(`<div class="miniText"> 
-        <br>
-        <h3>${temp}°C</h3>
-</div>`)
+        $('#result-temp').html(`<div class="miniText"><br><h3>${temp}°C</h3></div>`)
     })
     test = getWeb("humid").then((response) => {
         humid = parseFloat(response)
@@ -70,7 +65,6 @@ let getAll = () => {
 
 let getSetup = () => {
     setInterval(getAll, 2000)
-
 }
 
 let postWeb = (sensor, data) => {
@@ -89,11 +83,12 @@ let postWeb = (sensor, data) => {
 
 let postSetup = () => {
     $('#auto-drop-button').on('click', () => {
-        console.log(x)
         if (x) {
             postWeb('drop_status', 1)
         }
     })
+
+
     $('#on-round-button').on('mousedown', () => {
         postWeb('round_status', 1)
     })
@@ -108,17 +103,21 @@ let swapSwitch = () => {
         if (x === true) {
             $('#auto-drop-button').removeClass(`disabled`)
             $('#manual-auto').html(`<h3 style="text-align: right">Manual</h3>`)
+            postWeb('drop_auto_status', 1)
         }
         else {
             $('#auto-drop-button').addClass(`disabled`)
             $('#manual-auto').html(`<h3 style="text-align: right">Auto</h3>`)
-            postWeb('drop_status',0)
+            postWeb('drop_auto_status', 0)
         }
     })
 }
 
-window.onload = function () {
+function myFunction() {
+    postWeb('drop_status', 0)
+}
 
+window.onload = function () {
     var dps = []; // dataPoints
     var chart = new CanvasJS.Chart("chartTemperature", {
         title: {
@@ -203,8 +202,6 @@ window.onload = function () {
     updateChartTwo(dataLengthTwo);
     setInterval(function () { updateChartTwo() }, updateIntervalTwo);
 }
-
-
 
 let init = () => {
     getSetup()
